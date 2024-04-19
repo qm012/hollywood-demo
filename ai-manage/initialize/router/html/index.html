@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Server Sent Event</title>
+</head>
+
+<body>
+<div class="event-data"></div>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+
+    const url = 'https://dev-api.vland.live/ai-manage/v1/chat/completions'
+    const body = JSON.stringify({
+        "ai_platform": "openai",
+        "stream": true,
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+            {
+                "role": "system",
+                "content":"你是一个生气的小可爱",
+                "name": "xx"
+            },
+            {
+                "role":"user",
+                "content":"写一篇在北京的短文小说，至少3个段落，请用英文回复"
+            }
+        ],
+        "max_tokens": 4096,
+        "temperature": 0.2,
+        "frequency_penalty": 1,
+        "response_format": "text",
+        "operator": "小明"
+    });
+
+    fetch(url, {
+            method: 'POST',
+            body: body,
+            headers: {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVVUlEIjoiOWJiYTQ3NWUtOTUxMS00NmY1LWE3YmYtZjljYmRlNmIwNmZjIiwiSUQiOjEsIlVzZXJuYW1lIjoiYWRtaW4iLCJOaWNrTmFtZSI6Iui2hee6p-euoeeQhuWRmCIsIkF1dGhvcml0eUlkIjoiODg4IiwiQnVmZmVyVGltZSI6ODY0MDAsImV4cCI6MTcwMjk2MjI1OCwiaXNzIjoicW1QbHVzIiwibmJmIjoxNzAyMzU2NDU4fQ.Bos2Ivxbk6jMMIq4ah9Hmek8O0xVNDkGwlIih1QACV0",
+            },
+        }
+    ).then(async function (response) {
+        const reader = response.body.getReader();
+        while (true) {
+            const {value, done} = await reader.read();
+            if (done) break;
+            console.log(JSON.stringify(new TextDecoder().decode(value)));
+        }
+    });
+
+    // var stream = new EventSource("/stream/conversation");
+    // stream.addEventListener("msg", function (e) {
+    //     $('.event-data').append(e.data + "</br>")
+    // });
+</script>
+
+
+</html>

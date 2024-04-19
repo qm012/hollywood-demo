@@ -1,0 +1,18 @@
+app:
+  name: "Hollywood-Story"
+  port: 8091
+  active: "develop"
+  version: "v0.0.1"
+  authors:
+    - "tangqiming@versetech.cn"
+  repository: "xxx"
+
+zap:
+  filename: "./logs/Hollywood-Story.log"
+  max-size: 200
+  max-backup: 10
+  max-age: 31
+
+mongo:
+  path: "mongo-server:27017"
+  max-pool-size: 20

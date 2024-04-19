@@ -1,0 +1,6 @@
+zap:
+  level: "info" # info,error
+
+mongo:
+  username: ""
+  password: ""

@@ -1,0 +1,13 @@
+app:
+  admin-auth-verify-url: "xxx" # 管理后台验证地址
+
+zap:
+  level: "info" # info,error
+
+proxy:
+  http: "//127.0.0.1:7890"
+  socket: "http://127.0.0.1:7890"
+
+mongo:
+  username: ""
+  password: ""

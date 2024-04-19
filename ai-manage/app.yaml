@@ -1,0 +1,31 @@
+app:
+  name: "ai-manage"
+  port: 8092
+  active: "develop"
+  version: "v0.0.1"
+  authors:
+    - "tangqiming@versetech.cn"
+  repository: "xxx"
+
+zap:
+  filename: "./logs/ai-manage.log"
+  max-size: 200
+  max-backup: 10
+  max-age: 31
+
+ai:
+  enable: azure # Optional value：【openai,azure】
+  openai:
+    key: ""
+  azure:
+#    美东区
+#    key: ""
+#    base-url: ""
+#    org-id: "" # 组织id
+#    美国西部区
+    key: ""
+    base-url: ""
+
+mongo:
+  path: "mongo-server:27017" # hosts 解析，也可替换成固定ip:port
+  max-pool-size: 20

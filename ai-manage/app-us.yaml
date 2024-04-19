@@ -1,0 +1,9 @@
+app:
+  admin-auth-verify-url: "xxx" # 管理后台验证地址
+
+zap:
+  level: "info" # info,error
+
+mongo:
+  username: ""
+  password: ""

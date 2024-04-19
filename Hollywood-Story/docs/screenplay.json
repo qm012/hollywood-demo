@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "65a4c6e989e57ce4d6340c4e"
+  },
+  "key": "shiguangzhimen",
+  "name": "Gateway of Time",
+  "labels": [
+    "Fantasy",
+    "Business"
+  ],
+  "synopsis": "On the edge of a modern metropolis, a mysterious gateway of time suddenly emerges, connecting an ordinary corporate building to a magical and ancient fantasy kingdom. The protagonist, a successful but weary entrepreneur, accidentally traverses the gateway of time, finding himself in a world filled with magic and adventure.",
+  "welcome_message": "```Gateway of Time\n%s：Hey %s! 🚀\nGuess what's making waves in Hollywood? \"Gateway of Time,\" and the star? Yep, it's you! 🚀💫\nSuper stoked for your fantasy adventure! Embrace those magical vibes, sprinkle some charm, and own that enchanted set. If it feels like a maze of mystery, just remember, you've got the magic touch!\nCan't wait to see you shine and turn \"Gateway of Time\" into the coolest thing since unicorns. 🦄✨ Break a leg, fantasy queen! 🎬😊```\n",
+  "modified_at": 1705297641291,
+  "created_at": 1705297641291
+},{
+  "_id": {
+    "$oid": "65a4c73489e57ce4d6340c50"
+  },
+  "key": "xingjiliefeng",
+  "name": "Interstellar Fissure",
+  "labels": [
+    "Science Fiction",
+    "Business"
+  ],
+  "synopsis": "In the future Earth, scientists have discovered a mysterious energy fissure leading to the depths of the universe. This fissure is believed to be a gateway to unknown galaxies, holding infinite resources and technological wonders. However, as human exploration teams traverse the fissure, they uncover a planet more mysterious and dangerous than they had anticipated.",
+  "welcome_message": "```Interstellar Fissure\n%s：Hey %s! 🚀\nGuess what's officially taking off? \"Interstellar Fissure,\" and you're the cosmic star of the show! 🌌✨\nReady to sprinkle some stardust and make this sci-fi flick legendary? Embrace the weird, dive into the interstellar chaos, and most importantly, have a blast! 🎬\nIf the set ever feels like navigating a UFO with no manual, I got your back. We're all learning as we go, right?\nBreak a leg, space superstar! Can't wait to see you shine brighter than a supernova. 🌠👽🎥```\n",
+  "modified_at": 1705297716244,
+  "created_at": 1705297716244
+},{
+  "_id": {
+    "$oid": "65a4c76289e57ce4d6340c52"
+  },
+  "key": "moluzhuizong",
+  "name": "Endless Pursuit",
+  "labels": [
+    "Crime",
+    "Independent"
+  ],
+  "synopsis": "In a decaying city, Emo Havan, a former detective seeking redemption, is pulled back into the criminal world he vowed to leave behind when his partner, Max Davis, is mysteriously kidnapped. Emo discovers a city-wide conspiracy and must navigate the criminal underworld to rescue Max. As he unravels political corruption and power struggles, Emo, reunited with his journalist ex-girlfriend, faces a challenging climax. The film explores the fine line between justice and sin, with Emo's choices determining the city's destiny.",
+  "welcome_message": "```Endless Pursuit\n%s：Hey %s! 🚀\nGuess what's causing a stir in Tinseltown? \"Endless Pursuit,\" starring the incredible you! 🕵️♀️💃\nMassive congrats on diving into the crime scene. Get ready to rock those mysterious vibes and steal the show. If it ever feels like a Hollywood whodunit, just remember, you're the heartthrob detective we've all been waiting for.\nEnjoy every scene, soak up the thrill, and let the charm flow naturally. Can't wait to see you shine and make \"Endless Pursuit\" the hottest crime story in town. Break a leg, superstar! 🎬🌟💕```\n",
+  "modified_at": 1705297762537,
+  "created_at": 1705297762537
+},{
+  "_id": {
+    "$oid": "65a4c7b989e57ce4d6340c54"
+  },
+  "key": "chenshiderouqing",
+  "name": "City Serenade",
+  "labels": [
+    "Life",
+    "Artistic"
+  ],
+  "synopsis": "In a bustling city, artist Sophia, violinist Aidan, and retired psychologist Emily's lives unexpectedly intertwine, weaving a touching narrative. Through chance encounters and community activities, \"City Serenade\" explores the precious connections and inner peace found in the urban hustle.",
+  "welcome_message": "```City Serenade\n%s：Hey %s! 🚀\nSo, \"City Serenade\" has officially hit the lights, and guess who's stealing the show? Yep, it's you! 🎬💖\nJust wanted to send a little note to say how awesome it is to see you rock the art film scene. Your charm is like the perfect melody in this city serenade. Enjoy every moment, soak up the magic, and let the city lights illuminate your brilliance.\nIf it ever feels like you're in a scene straight out of a dream, know that you've got this dreamboat leading the way. Can't wait to see you shine and make \"City Serenade\" the most enchanting film ever.\nBreak a leg, captivating star! 🌟😊🎥```\n",
+  "modified_at": 1705297849757,
+  "created_at": 1705297849757
+},{
+  "_id": {
+    "$oid": "65a4c80689e57ce4d6340c56"
+  },
+  "key": "aizaishuguang",
+  "name": "Love at Dawn",
+  "labels": [
+    "Romance",
+    "Business"
+  ],
+  "synopsis": "In bustling New York City, curator Allison and aspiring musician Mark's hearts collide in a chance meeting, sparking a romantic journey. Despite their differing worlds—Allison in the art scene, Mark chasing his musical dreams—they find a profound connection. As real-life pressures test their love, the film explores how love, with courage and compromise, can bridge seemingly disparate lives. \"Love at Dawn\" is a poignant tale of the unifying power of love.",
+  "welcome_message": "```Love at Dawn\n%s：Hey %s! 🚀\nSo, \"Love at Dawn\" is officially in action, and guess who's stealing all the love vibes? Yep, it's you! 🎥💖\nJust wanted to drop a note and say how awesome it is to see you rock the romance scene. Your charm is like the perfect sunrise in this love story. Enjoy every moment, feel the butterflies, and let the romance blossom.\nIf it ever feels like you're in a scene straight out of a dream, just know that you've got this dreamboat leading the way. Can't wait to see you make \"Love at Dawn\" the most heart-melting film ever.\nBreak a leg, enchanting star! 🌄😊💫```\n",
+  "modified_at": 1705297926469,
+  "created_at": 1705297926469
+}]

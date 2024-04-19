@@ -1,0 +1,1778 @@
+[{
+  "_id": {
+    "$oid": "6583a9c332314355db5f7b03"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "two npc choice",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583a9c732314355db5f7b05"
+      },
+      "name": "默认版本",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with a scandalous event and this event happens between two given NPCs based on their occupations and personalities. You MUST refer to the scripts, location, weather and event theme for more dramatic content when writing the event. The event should lead to an open situation for the player to intervene.\nYou should then generate 4 choices that the player may take to intervene the situation. The choices must be consistent with given information, including the occupations and personalities of the NPCs and the player. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices.\nYour should then write a dramatic and Hollywood-like dialogue between two NPCs to depict the event. One of the NPCs should DIRECTLY ask the player a question at the end of the dialogue.\nYou are to output the following in json format:\n{\"Dialogue\":\"The list of a dramatic dialogue between 2 NPCs. At least 100 words, each sentence as an item in list.\",\n\"Event\":\"a dramatic and Hollywood-like event. At least 100 words\",\n\"A\":\"generate a choice according to the following theme: player {action_tag_a} using {attribute_a} skills. Less than 10 words\",\n\"B\":\"generate a choice according to the following theme: player {action_tag_b} using {attribute_b} skills. Less than 10 words\",\n\"C\":\"generate a choice according to the following theme: player {action_tag_c} using {attribute_c} skills. Less than 10 words\",\n\"D\":\"generate a choice according to the following theme: player {action_tag_d} using {attribute_d} skills. Less than 10 words\"}.\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 500,
+        "temperature": 0.800000011920929,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "超级管理员",
+      "creator": "超级管理员",
+      "modifiedAt": 1703246081551,
+      "createdAt": 1703127495791
+    },
+    {
+      "_id": {
+        "$oid": "658578312763f4367226960d"
+      },
+      "name": "1",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with a scandalous event and this event happens between two given NPCs based on their occupations and personalities. You MUST refer to the scripts, location, weather and event theme for more dramatic content. The event should lead to an open situation for the player to intervene.\nYou should then generate 4 choices that the player may take to intervene the situation based on skills. The choices must be consistent with given informations. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices. \nYour should then write a dramatic and Hollywood-like dialogue between two NPCs to depict the event. One of the NPCs should DIRECTLY ask the player a question at the end of the dialogue.\nYou are to output the following in json format:\n{\"Event\":\"a dramatic and Hollywood-like event. At least 100 words\",\n\"Dialogue\":\"The list of a dramatic dialogue between 2 NPCs. At least 100 words, each sentence as an item in list.\",\n\"A\":\"generate a choice where the player tries to {action_tag_a} with {attribute_a} skill. Less than 10 words\",\n\"B\":\"generate a choice where the player tries to {action_tag_b} with {attribute_b} skill. Less than 10 words\",\n\"C\":\"generate a choice where the player tries to {action_tag_c} with {attribute_c} skill. Less than 10 words\",\n\"D\":\"generate a choice where the player tries to {action_tag_d} with {attribute_d} skill. Less than 10 words\"}.\nDo not include the skill name in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.800000011920929,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132467099,
+      "createdAt": 1703245873196
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132467099,
+  "createdAt": 1703127491570
+},{
+  "_id": {
+    "$oid": "6583af4c32314355db5f7b06"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "outcome_news",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583af5032314355db5f7b08"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to come up with a social media post based on the given headline and event outcome. It should come from the perspective of a high school fan who follows Hollywood related social media. Refer to the given infos from the user input for any missing details. \nYou should then generate 3 to 6 comments from readers for this post. The comments need to be more colloquial and controversial, with both positive and negative attitudes. The comments MUST include as many internet slang, abbreviations, hashtags, and emoticons as possible.\nYou MUST use as many popular internet abbreviations as possible. You should NOT write the post and comments in rigorous grammar. \nYou are to output the following in json format: \n{\"Post\": \"An attractive social media post. At least 70 words.\",\n\"Comments\":\"The list of generated comments that vary in length. Each comment as an item in list and is less than 20 words.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- movie script :\n    {movie_script}\n- event description:\n    {event_desc}\n- player's reaction:\n    {players_reaction}\n- event outcome:\n    {event_outcome}\n- post headline:\n    {post_headline}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.800000011920929,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{event_outcome}",
+          "value": ""
+        },
+        {
+          "key": "{post_headline}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132449912,
+      "createdAt": 1703128912090
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132449912,
+  "createdAt": 1703128908227
+},{
+  "_id": {
+    "$oid": "6583b09932314355db5f7b09"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "two npc outcome",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583b09f32314355db5f7b0b"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to rewrite the player's reaction with more details based on the given infos and event description. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the given event, based on the player's reaction and film's attributes changes. The progress should be unexpected, dramatic, Hollywood-like, and also consistent with the event and the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the event description, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- event description:\n    {event_desc}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132435957,
+      "createdAt": 1703129247415
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132435957,
+  "createdAt": 1703129241196
+},{
+  "_id": {
+    "$oid": "6583b52232314355db5f7b0c"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "player/NPC choice",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583b52b32314355db5f7b0e"
+      },
+      "name": "默认版本",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with given script. All NPCs are very controversial and scandalous Hollywood celebrities.\nYour job is first to come up with an event with the given event theme and this event happens between the given NPC and the player based on their infos like occupation and personality. The event should lead to an open situation for the player to respond. \nYou MUST refer to the scripts, location, weather and event theme for more dramatic content when writing the event. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to respond. The choices must be consistent with the given infos. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices.\nYour should then write a dramatic and Hollywood-like monologue from the NPC to the player, to depict the event. The NPC MUST ask player a direct question at the end of the monologue.\nYou are to output the following in json format: \n{ \"Event\":\"a dramatic and Hollywood-like event. At least 60 words\",\n\"Monologue\":\"A monologue from the NPC to the player. At least 40 words.\",\n\"A\":\"generate a choice according to the following theme: player {action_tag_a} using {attribute_a} skills. Less than 10 words\",\n\"B\":\"generate a choice according to the following theme: player {action_tag_b} using {attribute_b} skills. Less than 10 words\",\n\"C\":\"generate a choice according to the following theme: player {action_tag_c} using {attribute_c} skills. Less than 10 words\",\n\"D\":\"generate a choice according to the following theme: player {action_tag_d} using {attribute_d} skills. Less than 10 words\",}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 500,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "超级管理员",
+      "creator": "超级管理员",
+      "modifiedAt": 1703237555107,
+      "createdAt": 1703130411889
+    },
+    {
+      "_id": {
+        "$oid": "658557462763f4367226960a"
+      },
+      "name": "1",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with an event with the given event theme and this event happens between the given NPC and the player based on their infos like occupation and personality. The event should lead to an open situation for the player to respond. You MUST refer to the scripts, location, weather and event theme for more dramatic content. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to respond base on skills. The choices must be consistent with the given infos. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices.\nYour should then write a dramatic and Hollywood-like monologue from the NPC to the player, to depict the event. The NPC MUST ask player a direct question at the end of the monologue.\nYou are to output the following in json format: \n{ \"Event\":\"a dramatic and Hollywood-like event. At least 60 words\",\n\"Monologue\":\"A monologue from the NPC to the player. At least 40 words.\",\n\"A\":\"generate a choice where the player tries to {action_tag_a} with {attribute_a} skill. Less than 10 words\",\n\"B\":\"generate a choice where the player tries to {action_tag_b} with {attribute_b} skill. Less than 10 words\",\n\"C\":\"generate a choice where the player tries to {action_tag_c} with {attribute_c} skill. Less than 10 words\",\n\"D\":\"generate a choice where the player tries to {action_tag_d} with {attribute_d} skill. Less than 10 words\",}\nDo not include the skill name in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132423637,
+      "createdAt": 1703237446181
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132423637,
+  "createdAt": 1703130402432
+},{
+  "_id": {
+    "$oid": "6583b5cb32314355db5f7b0f"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "player/NPC outcome",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583b5d032314355db5f7b11"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to rewrite the player's reaction with more details based on the given infos and event description. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the given event, based on the player's reaction and film's attributes changes. The progress should be unexpected, dramatic, Hollywood-like, and also consistent with the event and the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the event description, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- event description:\n    {event_desc}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.800000011920929,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132397317,
+      "createdAt": 1703130576412
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132397317,
+  "createdAt": 1703130571952
+},{
+  "_id": {
+    "$oid": "6583b6bb32314355db5f7b12"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "special npc/npc choice",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583c8dc32314355db5f7b16"
+      },
+      "name": "默认版本",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with a scandalous event and this event happens between two given NPCs based on their occupations and personalities. You MUST refer to the scripts, location, weather and event theme for more dramatic content when writing the event. The event should lead to an open situation for the player to intervene.\nYou should then generate 4 choices that the player may take to intervene the situation. The choices must be consistent with given information, including the occupations and personalities of the NPCs and the player. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices.\nYour should then write a dramatic and Hollywood-like dialogue between two NPCs to depict the event. One of the NPCs MUST ask player a direct question at the end of the dialogue.\nYou are to output the following in json format:{\"Dialogue\":\"The list of a dramatic dialogue between 2 NPCs. At least 100 words, each sentence as an item in list.\",\"Event\":\"a dramatic and Hollywood-like event. At least 100 words\",\"A\":\"generate a choice according to the following theme: player {action_tag_a} using {attribute_a} skills. Less than 10 words\",\"B\":\"generate a choice according to the following theme: player {action_tag_b} using {attribute_b} skills. Less than 10 words\",\"C\":\"generate a choice according to the following theme: player {action_tag_c} using {attribute_c} skills. Less than 10 words\",\"D\":\"generate a choice according to the following theme: player {action_tag_d} using {attribute_d} skills. Less than 10 words\"}.\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 500,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "超级管理员",
+      "creator": "超级管理员",
+      "modifiedAt": 1703250919478,
+      "createdAt": 1703135452374
+    },
+    {
+      "_id": {
+        "$oid": "658557e02763f4367226960b"
+      },
+      "name": "1",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with an event with the given event theme and this event happens between two given NPCs based on NPC infos and other input like movie script, location, and weather. The event should lead to an open situation for the player to intervene. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to intervene the situation based on skills. The choices must be consistent with given informations. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices. \nYour should then write a dramatic and Hollywood-like dialogue between two NPCs to depict the event. The player can be asked a question directly at the end of the dialogue.\nYou are to output the following in json format:\n{\"Event\":\"a dramatic and Hollywood-like event. At least 100 words\", \n\"Dialogue\":\"The list of a dramatic dialogue between 2 NPCs. At least 100 words, each sentence as an item in list.\", \n\"A\":\"generate a choice where the player tries to {action_tag_a} with {attribute_a} skill. Less than 10 words\",\n\"B\":\"generate a choice where the player tries to {action_tag_b} with {attribute_b} skill. Less than 10 words\",\n\"C\":\"generate a choice where the player tries to {action_tag_c} with {attribute_c} skill. Less than 10 words\",\n\"D\":\"generate a choice where the player tries to {action_tag_d} with {attribute_d} skill. Less than 10 words\"}.\nDo not include skill names in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n    Note that Noah is not a member of this film crew.\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    Noah came to visit the player and they shortly hang out with a vaguely intimate conversation.\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132380934,
+      "createdAt": 1703237600944
+    },
+    {
+      "_id": {
+        "$oid": "658589f82763f4367226960e"
+      },
+      "name": "2",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs are working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebrities.\nYour job is first to come up with an event with the given event theme and this event happens between two given NPCs based on NPC infos and other input like movie script, location, and weather. The event should lead to an open situation for the player to intervene. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to intervene the situation based on attributes. The choices must be consistent with given informations. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *You* in the choices. \nYour should then write a dramatic and Hollywood-like dialogue between two NPCs to depict the event. The player can be asked a question directly at the end of the dialogue.\nYou are to output the following in json format:\n{\"Event\":\"a dramatic and Hollywood-like event. At least 100 words\", \n\"Dialogue\":\"The list of a dramatic dialogue between 2 NPCs. At least 100 words, each sentence as an item in list.\", \n\"A\":\"generate a choice tied to {attribute_a}, where the player tries to {action_tag_a}. Less than 10 words\",\n\"B\":\"generate a choice tied to {attribute_b}, where the player tries to {action_tag_b}. Less than 10 words\",\n\"C\":\"generate a choice tied to {attribute_c}, where the player tries to {action_tag_c}. Less than 10 words\",\n\"D\":\"generate a choice tied to {attribute_d}, where the player tries to {action_tag_d}. Less than 10 words\"}.\nDo not include attribute names in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n    Note that Noah is not a member of this film crew.\n- player infos:\n    {player_infos}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    Noah came to visit the player and they shortly hang out with a vaguely intimate conversation.\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 500,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "超级管理员",
+      "creator": "超级管理员",
+      "modifiedAt": 1703250919478,
+      "createdAt": 1703250424674
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132380934,
+  "createdAt": 1703130811497
+},{
+  "_id": {
+    "$oid": "6583b6c432314355db5f7b14"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "special npc/npc outcome",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583c93b32314355db5f7b17"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to rewrite the player's reaction with more details based on the given infos and event description. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the given event, based on the player's reaction and film's attributes changes. The progress should be unexpected, dramatic, Hollywood-like, and also consistent with the event and the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the event description, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- event description:\n    {event_desc}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132354734,
+      "createdAt": 1703135547515
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132354734,
+  "createdAt": 1703130820633
+},{
+  "_id": {
+    "$oid": "6583c9ba32314355db5f7b18"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "special actor choice",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583c9bd32314355db5f7b1a"
+      },
+      "name": "默认版本",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in the movie industry in Hollywood. The player is working for a shooting scene for a movie with the given script. All NPCs are very controversial and scandalous Hollywood celebraties.\nYour job is first to come up with an event with the given event type and style. This event happens between the given NPC and the player based on their infos like occupation and personality.  \nYou MUST refer to the scripts, location, weather and event theme for more dramatic content when writing the event. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to respond to the event. The choices must be consistent with the given infos. All choices should come from the perspective of the player, not the NPCs'.\nYour should then write a monologue from the NPC to the player, to fully depict the event. The NPC MUST ask player a direct question at the end of the monologue.\nYou are to output the following in json format: {output_format}. \noutput_format = {\"Event\":\"an event. At least 50 words\",\n                                   \"Monologue\":\"A monologue from the NPC to the player. At least 40 words.\",\n                                   \"A\":\"generate a choice according to the following theme: player {action_tag_a} using {attribute_a} skills. Less than 10 words\",\n                                   \"B\":\"generate a choice according to the following theme: player {action_tag_b} using {attribute_b} skills. Less than 10 words\",\n                                   \"C\":\"generate a choice according to the following theme: player {action_tag_c} using {attribute_c} skills. Less than 10 words\",\n                                   \"D\":\"generate a choice according to the following theme: player {action_tag_d} using {attribute_d} skills. Less than 10 words\",}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}{special_info}\n- location:\n    {location}\n- weather:\n    {weather}\n- event theme:\n    {event_theme}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 500,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{output_format}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{special_info}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{event_theme}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "超级管理员",
+      "creator": "超级管理员",
+      "modifiedAt": 1703245783556,
+      "createdAt": 1703135677782
+    },
+    {
+      "_id": {
+        "$oid": "65856e0d2763f4367226960c"
+      },
+      "name": "1",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in the movie industry in Hollywood. The player is working for a shooting scene for a movie with the given script. All NPCs are very controversial Hollywood celebraties.\nYour job is first to come up with the details of an event with the given event type and style. This event happens between the given NPC and the player based on their infos like occupation and personality. You MUST refer to the scripts, location, weather and event theme for more dramatic content when writing the event. Use your imagination for any missing details.\nYou should then generate 4 choices that the player may take to respond to the event based on skills. The choices must be consistent with the given infos. All choices should come from the perspective of the player, not the NPCs'. Do not include the subject *YOU* in the choices. \nYour should then write a monologue from the NPC to the player, to fully depict the event. The NPC MUST ask player a direct question at the end of the monologue.\nYou are to output the following in json format: \n{\"Event\":\"an event. At least 50 words\",\n\"Monologue\":\"A monologue from the NPC to the player. At least 40 words.\",\n\"A\":\"generate a choice where the player tries to {action_tag_a} with {attribute_a} skill. Less than 10 words\",\n\"B\":\"generate a choice where the player tries to {action_tag_b} with {attribute_b} skill. Less than 10 words\",\n\"C\":\"generate a choice where the player tries to {action_tag_c} with {attribute_c} skill. Less than 10 words\",\n\"D\":\"generate a choice where the player tries to {action_tag_d} with {attribute_d} skill. Less than 10 words\",}\nDo not include the skill name in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n{special_info}\n- location:\n    {location}\n- weather:\n    {weather}\n- movie script:\n    {movie_script}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{special_info}",
+          "value": ""
+        },
+        {
+          "key": "{location}",
+          "value": ""
+        },
+        {
+          "key": "{weather}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132340689,
+      "createdAt": 1703243277940
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132340689,
+  "createdAt": 1703135674482
+},{
+  "_id": {
+    "$oid": "6583ca3d32314355db5f7b1b"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "special actor outcome",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "6583ca6d32314355db5f7b1d"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to rewrite the player's reaction with more details based on the given infos and event description. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the given event, based on the player's reaction and film's attributes changes. The progress should be unexpected, dramatic, Hollywood-like, and also consistent with the event and the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the event description, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- event description:\n    {event_desc}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132324765,
+      "createdAt": 1703135853312
+    },
+    {
+      "_id": {
+        "$oid": "65ae263ef87b25725998f422"
+      },
+      "name": "默认版本（副本）",
+      "isProduction": false,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of the RPG game is about people and stories happened in a movie shooting studio in Hollywood. The NPCs and the player are working for a shooting scene for a movie. All NPCs are very controversial and scandalous Hollywood celebrities. The movie has attribution of quality and popularity.\nYour job is first to rewrite the player's reaction with more details based on the given infos and event description. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the given event, based on the player's reaction and film's attributes changes. The progress should be unexpected, dramatic, Hollywood-like, and also consistent with the event and the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the event description, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    {npc_infos}\n- player infos:\n    {player_infos}\n- event description:\n    {event_desc}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{event_desc}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "spencer",
+      "modifiedAt": 1707132312378,
+      "createdAt": 1705911870899
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132324765,
+  "createdAt": 1703135805144
+},{
+  "_id": {
+    "$oid": "65b34219f87b25725998f423"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "promotion MeetAndGreet chooice",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "65b34289f87b25725998f428"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of this RPG game is about characters and stories that occur during the filmmaking process in Hollywood. The NPCs have just finished shooting a movie with a given script and are now at a promotional event for a fan meet-up. All NPCs are controversial Hollywood celebrities.\nYour job is first to come up with a Hollywood-like dialogue based on the given topic and NPCs. The dialogue should lead to an open situation for the player to intervene. The dialogue content needs to be intense and dramatic, and it should align with the NPCs' occupations and personalities. \nYou should then generate four choices that the player may take to respond to the situation. The choices must be consistent with given infos. All choices should come from the player's perspective. Each choice should be fewer than 8 words. Do not include the subject *You* in the choices.\n\nYou are to output the following in json format: {\"Dialogue\":\"The list of a dramatic dialogue among NPCs. At least 50 words, each sentence as an item in list.\",\n\"A\":\"generate a choice for player to {action_tag_a} with {attribute_a} skill\",\n\"B\":\"generate a choice for player to {action_tag_b} with {attribute_b} skill\",\n\"C\":\"generate a choice for player to {action_tag_c} with {attribute_c} skill\",\n\"D\":\"generate a choice for player to {action_tag_d} with {attribute_d} skill\",}\n\nDo not include the skill name in the generated choices. Do not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    name:Host, occupation:host of the event, personality:instigating and provocative\n    {npc_infos}\n- player infos:\n    {player_infos}\n- movie script:\n    {movie_script}\n\n- dialogue topic:\n    A fan with random background introduced himself/herself and then asked a question to all NPCs (excluding the host).\n- event session:\n    The event has started for a while.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{action_tag_a}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_a}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_b}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_b}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_c}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_c}",
+          "value": ""
+        },
+        {
+          "key": "{action_tag_d}",
+          "value": ""
+        },
+        {
+          "key": "{attribute_d}",
+          "value": ""
+        },
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{movie_script}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132269577,
+      "createdAt": 1706246793522
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132269577,
+  "createdAt": 1706246681482
+},{
+  "_id": {
+    "$oid": "65b34233f87b25725998f425"
+  },
+  "projectID": {
+    "$oid": "6583a9b632314355db5f7b01"
+  },
+  "name": "promotion MeetAndGreet outcome",
+  "versions": [
+    {
+      "_id": {
+        "$oid": "65b34264f87b25725998f427"
+      },
+      "name": "默认版本",
+      "isProduction": true,
+      "chatReq": {
+        "model": "gpt-3.5-turbo-1106",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a creative writer who generates ideas and contents for an RPG game. \nThe content of this RPG game is about characters and stories that occur during the filmmaking process in Hollywood. The NPCs have just finished shooting a movie with a given script and are now at a promotional event for a fan meet-up. All NPCs are controversial Hollywood celebrities. The movie has attribution of popularity and media reputation.\nYour job is first to rewrite the player's reaction with more details based on the given infos and conversation. It should come from the perspective of the player. Use you imagination for any missing details.\nYou should then write an progress of the fan meet-up, based on the player's reaction and film's attributes changes. The progress should be interesting, dramatic, Hollywood-like, and also consistent with the resulting attributes changes.\nYou are to output the following in json format: \n{\"Reaction\": \"Rewrite the player's reaction with 'You' as the subject. At least 15 words.\",\n\"Event Progress\":\"Based on the conversation, reaction, and infos of the NPCs and the player, determine what can happen that results in the changes in the film's attributes. At least 60 words.\",\n\"Headline\":\"Based on the event progress, generate eye-catching social media post headline. Less than 15 words.\",\"Extended Conversation\": \"Read the dialogue or monologue. Write one more sentence from one of the NPCs based on Event Progress and player's Reaction.\"}\nDo not put quotation marks or escape character \\ in the output fields. It's Ok to violate grammar for this reason.",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          },
+          {
+            "role": "user",
+            "content": "- NPC infos:\n    name:Host, occupation:host of the event, personality:instigating and provocative\n    {npc_infos}\n- player infos:\n    {player_infos}\n- conversation:\n    {conversation}\n- player's reaction:\n    {players_reaction}\n- result of changes in the film's attributes:\n    {film_attr}",
+            "multicontent": null,
+            "name": "",
+            "functioncall": null,
+            "toolcalls": null,
+            "toolcallid": ""
+          }
+        ],
+        "maxtokens": 1000,
+        "temperature": 0.699999988079071,
+        "topp": 0,
+        "n": 0,
+        "stream": false,
+        "stop": null,
+        "presencepenalty": 0,
+        "responseformat": {
+          "type": "json_object"
+        },
+        "seed": null,
+        "frequencypenalty": 0,
+        "logitbias": null,
+        "user": "",
+        "functions": null,
+        "functioncall": null,
+        "tools": null,
+        "toolchoice": null
+      },
+      "variables": [
+        {
+          "key": "{npc_infos}",
+          "value": ""
+        },
+        {
+          "key": "{player_infos}",
+          "value": ""
+        },
+        {
+          "key": "{conversation}",
+          "value": ""
+        },
+        {
+          "key": "{players_reaction}",
+          "value": ""
+        },
+        {
+          "key": "{film_attr}",
+          "value": ""
+        }
+      ],
+      "modifier": "spencer",
+      "creator": "超级管理员",
+      "modifiedAt": 1707132253895,
+      "createdAt": 1706246756275
+    }
+  ],
+  "locked": false,
+  "modifiedAt": 1707132253895,
+  "createdAt": 1706246707508
+}]
