@@ -7,7 +7,7 @@
     3. 初始化数据
         1. 在 `ai` 数据库中分别创建 `prompt` `project` Collection
         2. 使用 `../docs/{project.json,prompt.json}`文件在上一步的Collection中初始化数据
-            * 注：可以使用 `MongoDB Compass` IDE 的工具`Export Collection`来初始化数据
+            * 注：可以使用 `MongoDB Compass` IDE 的工具`ADD DATA -> import xx`来初始化数据
 ### 配置项目环境
     1. ../app.yaml 中填写 openai的key和mongo的地址
     2. 根据启动环境分别填写不同环境下的存储地址
